@@ -21,6 +21,10 @@ body {
   background-color: var(--color-white);
 }
 
+.hero, .about, .why-us, .offers, .available, .stay {
+  scroll-margin-top: 11rem; 
+}
+
 .header__logo {
   font-family: "Playfair Display", sans-serif;
   font-weight: 700;
@@ -712,6 +716,7 @@ body {
   font-size: 1.6rem;
   text-align: center;
 }
+
 
 
 
