@@ -22,7 +22,7 @@ body {
 }
 
 .hero, .about, .why-us, .offers, .available, .stay {
-  scroll-margin-top: 11rem; 
+  scroll-margin-top: 13rem; 
 }
 
 .header__logo {
@@ -716,6 +716,7 @@ body {
   font-size: 1.6rem;
   text-align: center;
 }
+
 
 
 
