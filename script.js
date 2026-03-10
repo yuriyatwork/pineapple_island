@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             box.addEventListener('touchend', (e) => {
                 const touchEndX = e.changedTouches[0].screenX;
-                const swipeThreshold = 30; 
+                const swipeThreshold = 50; 
                 
                 if (touchStartX - touchEndX > swipeThreshold) {
                     scrollStep('right');
@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
 
 
 
