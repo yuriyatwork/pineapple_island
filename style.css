@@ -112,7 +112,7 @@ body {
 .header__nav-close {
   position: absolute;
   top: 2rem;
-  right: 3rem;
+  right: 4rem;
   background: none;
   border: none;
   color: white;
@@ -710,6 +710,7 @@ body {
   font-size: 1.6rem;
   text-align: center;
 }
+
 
 
 
