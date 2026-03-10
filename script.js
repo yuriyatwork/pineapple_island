@@ -91,7 +91,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             btnR.onclick = (e) => { e.preventDefault(); scrollStep('right'); };
             btnL.onclick = (e) => { e.preventDefault(); scrollStep('left'); };
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            box.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            box.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeThreshold = 50; 
+                if (touchStartX - touchEndX > swipeThreshold) {
+                    scrollStep('right');
+                } else if (touchEndX - touchStartX > swipeThreshold) {
+                    scrollStep('left');
+                }
+            }, { passive: true });
             window.addEventListener('resize', () => jumpTo(currentIndex));
         }
     }
+
 });
