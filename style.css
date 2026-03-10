@@ -90,10 +90,9 @@ body {
 .header__nav-list {
   list-style: none;
   text-align: center;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: auto 0;
 }
 
 .header__nav-list li {
@@ -711,5 +710,6 @@ body {
   font-size: 1.6rem;
   text-align: center;
 }
+
 
 
