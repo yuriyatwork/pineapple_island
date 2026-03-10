@@ -660,7 +660,7 @@ body {
 .modal__close {
   position: absolute;
   top: 1rem;
-  right: 3rem;
+  right: 2rem;
   background: none;
   border: none;
   font-size: 3rem;
@@ -710,6 +710,7 @@ body {
   font-size: 1.6rem;
   text-align: center;
 }
+
 
 
 
