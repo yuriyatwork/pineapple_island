@@ -92,15 +92,27 @@ document.addEventListener('DOMContentLoaded', () => {
             btnR.onclick = (e) => { e.preventDefault(); scrollStep('right'); };
             btnL.onclick = (e) => { e.preventDefault(); scrollStep('left'); };
             let touchStartX = 0;
-            let touchEndX = 0;
+            let touchStartY = 0;
 
             box.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
             }, { passive: true });
 
+            box.addEventListener('touchmove', (e) => {
+                const touchMoveX = e.changedTouches[0].screenX;
+                const touchMoveY = e.changedTouches[0].screenY;
+                
+                // Если движение по горизонтали больше, чем по вертикали — блокируем скролл страницы
+                if (Math.abs(touchStartX - touchMoveX) > Math.abs(touchStartY - touchMoveY)) {
+                    if (e.cancelable) e.preventDefault();
+                }
+            }, { passive: false }); 
+
             box.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const swipeThreshold = 30; 
+                const touchEndX = e.changedTouches[0].screenX;
+                const swipeThreshold = 30; // Уменьшенный порог для быстрого отклика
+                
                 if (touchStartX - touchEndX > swipeThreshold) {
                     scrollStep('right');
                 } else if (touchEndX - touchStartX > swipeThreshold) {
@@ -112,4 +124,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
 
